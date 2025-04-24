@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Details</title>
+    <link rel="stylesheet" href="index-style.css">
+    <link rel="stylesheet" href="dynamic-style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Tra<span>vel</span></a>
+
+
+        <div class="h-right">
+            <input type="text" id="search-bar" placeholder="Search places..." onkeyup="searchPlaces()" class="nav-btn">
+            <div class="fa fa-bars navbar-link" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="destination-header" id="destination-header">
+        <h1 id="place-name">Loading...</h1>
+    </div>
+
+    
+    <!-- Place Details Section -->
+    <div class="destination-container">
+        <section class="destination-detail">
+            <div class="main-image-container">
+                <button id="prev-btn" class="nav-button">❮</button>
+                <img id="place-image" src="images/default.jpg" alt="Destination">
+                <button id="next-btn" class="nav-button">❯</button>
+            </div>
+            <p><strong>📍 Address:</strong> <span id="place-address"></span></p>
+            <p><strong>⭐ Rating:</strong> <span id="place-rating"></span></p>
+        </section>
+    </div>
+
+    <!-- Scrollable Photo Gallery -->
+    <section id="photo-gallery-container" class="photo-gallery"></section>
+
+    <!-- Sidebar for Travel Info & Google Map -->
+    <aside class="destination-sidebar">
+        <div class="sidebar-content">
+            <div class="travel-info">
+                <h3>Travel Info</h3>
+                <ul>
+                    <li><strong>🌦 Best Time to Visit:</strong> All Year Round</li>
+                    <li><strong>🎭 Activities:</strong> Sightseeing, Adventure, Culture</li>
+                    <li><strong>🍽 Food Specialties:</strong> Local Cuisine</li>
+                </ul>
+                <div id="best-time">
+                    <p>Loading best time to visit...</p>
+                </div>
+                <div class="reviews">
+                    <h3>User Reviews</h3>
+                    <div id="reviews-container">
+                        <p>Loading reviews...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+    </aside>
+
+
+    <!-- Back to Home Button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </div>
+
+    <!-- Google Maps API -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH3sCg-jsPdmA8tVuhc2AL5ReDUipgd7Y&libraries=places&callback=loadGoogleMap"></script>
+<script src="nearby-script.js"></script>
+<script src="google.place.api-script.js"></script>
+<script src="pexel.api-script.js"></script>
+
+
+
+    
+</body>
+</html>
