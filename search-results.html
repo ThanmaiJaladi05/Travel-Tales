@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="index-style.css">
+    <link rel="stylesheet" href="dynamic-style.css">
+    <link rel="stylesheet" href="descat-style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Tra<span>vel</span></a>
+        <div class="h-right">
+            <input type="text" id="search-bar" placeholder="Search places..." onkeyup="searchPlaces()" class="nav-btn">
+            <div class="fa fa-bars navbar-link" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <div class="destination-header">
+        <h1 id="search-query">Search Results for: Loading...</h1>
+    </div>
+
+    <!-- Hidden Map for Google API -->
+    <div id="hidden-map" style="display: none;"></div>
+
+    <!-- Filter and Sort Options -->
+   <!-- Filter and Sort Options -->
+<div class="filter-sort-container">
+    <label for="sort-by">Sort By:</label>
+    <select id="sort-by" onchange="sortPlaces()">
+        <option value="rating">Rating (High to Low)</option>
+        <option value="name">Name (A-Z)</option>
+    </select>
+
+    <label for="distance-filter">Distance:</label>
+    <select id="distance-filter" onchange="applyDistanceFilter()">
+        <option value="nearby">Nearby (15km)</option>
+        <option value="city">City (50km)</option>
+        <option value="country">Country (500km)</option>
+        <option value="world">World (No Limit)</option>
+    </select>
+</div>
+
+    <!-- Places Grid -->
+    <div class="destination-container">
+        <section class="destination-detail">
+            <h2>All Places</h2>
+            <div id="all-places" class="places-grid"></div>
+        </section>
+    </div>
+
+    <!-- Load Google API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH3sCg-jsPdmA8tVuhc2AL5ReDUipgd7Y&libraries=places"></script>
+    <script src="search-script.js"></script>
+    <script src="google.place.api-script.js"></script>
+    <script src="pexel.api-script.js"></script>
+
+    
+
+</body>
+</html>
+
+
